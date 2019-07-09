@@ -23,7 +23,15 @@ let radio = (function(){
 		}
 
 		broadcast(...data){
-			this._subscriptions.forEach(susbcriptionFn => susbcriptionFn(...data));
+			/*this._subscriptions.forEach(susbcriptionFn => susbcriptionFn(...data));*/
+			var self = this;
+			for(let index = 0, count = this._subscriptions.length; index < count; index++){
+				setTimeout(function(){
+					console.log(index);
+					var susbcriptionFn = self._subscriptions[index];
+					susbcriptionFn();
+				});
+			}
 			return this;
 		}
 

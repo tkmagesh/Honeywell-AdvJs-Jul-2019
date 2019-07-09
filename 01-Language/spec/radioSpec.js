@@ -17,5 +17,5 @@ describe('a radio', () => {
 
 		//Assert
 			expect(subFn1).toHaveBeenCalledWith(data1);
-	})
-})
+	});
+});
